@@ -1,4 +1,4 @@
-# 코틀린 스터디
+# 코틀린 스터디 (24.09.25-)
 
 ## 학습 목표
 - [코틀린 컨벤션 학습](https://kotlinlang.org/docs/coding-conventions.html)
