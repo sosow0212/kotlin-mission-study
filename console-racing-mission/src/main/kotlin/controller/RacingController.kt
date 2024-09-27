@@ -16,7 +16,7 @@ class RacingController(
 
         val cars = Cars.from(names)
         cars.moveCars(numberGenerator, tryCount)
-        val winners = cars.findWinners();
+        val winners = cars.findWinners()
 
         outputView.printResult(winners)
     }
