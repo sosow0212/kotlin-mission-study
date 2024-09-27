@@ -6,15 +6,11 @@ import com.domain.service.NumberGenerator
 class Cars(
     carNames: List<String>,
 ) {
-    companion object {
-        private const val NAME_LENGTH_LIMIT = 5
-    }
-
     private val cars: List<Car>
 
     init {
         validateNames(carNames)
-        cars = carNames.map { Car(it) }
+        this.cars = carNames.map { Car(it) }
     }
 
     private fun validateNames(carNames: List<String>) {
@@ -29,5 +25,9 @@ class Cars(
 
     fun moveCars(numberGenerator: NumberGenerator) {
         this.cars.forEach { it.move(numberGenerator) }
+    }
+
+    companion object {
+        private const val NAME_LENGTH_LIMIT = 5
     }
 }
