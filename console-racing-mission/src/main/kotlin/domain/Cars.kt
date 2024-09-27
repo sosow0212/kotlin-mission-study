@@ -1,6 +1,7 @@
 package com.model
 
 import com.domain.exception.CarNameInvalidException
+import com.domain.service.NumberGenerator
 
 class Cars(
     carNames: List<String>,

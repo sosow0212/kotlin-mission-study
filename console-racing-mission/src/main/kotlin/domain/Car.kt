@@ -1,5 +1,7 @@
 package com.model
 
+import com.domain.service.NumberGenerator
+
 class Car(
     val name: String,
 ) {

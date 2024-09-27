@@ -1,4 +1,4 @@
-package com.model
+package com.domain.service
 
 interface NumberGenerator {
     fun generate(): Int

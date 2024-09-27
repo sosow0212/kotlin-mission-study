@@ -1,6 +1,6 @@
-package domain
+package domain.service
 
-import com.model.NumberGenerator
+import com.domain.service.NumberGenerator
 
 class FakeNumberGenerator : NumberGenerator {
     override fun generate(): Int {
