@@ -1,4 +1,4 @@
-package model
+package domain
 
 import com.model.Car
 import org.assertj.core.api.Assertions.assertThat
