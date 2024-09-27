@@ -19,4 +19,17 @@ class CarTest {
         // then
         assertThat(car.moveCount).isEqualTo(defaultCount + 1);
     }
+
+    @Test
+    fun `움직인 수가 같으면 true를 반환한다`() {
+        // given
+        val car = Car("jay")
+        val moveCount = car.moveCount
+
+        // when
+        val result = car.isSameMoveCount(moveCount)
+
+        // then
+        assertThat(result).isTrue()
+    }
 }

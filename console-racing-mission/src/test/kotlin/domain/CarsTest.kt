@@ -2,6 +2,7 @@ package domain
 
 import com.domain.exception.CarNameInvalidException
 import com.model.Cars
+import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import org.junit.jupiter.api.DisplayName
@@ -20,7 +21,7 @@ class CarsTest {
 
             // when & then
             assertThatThrownBy {
-                Cars(carNames)
+                Cars.from(carNames)
             }.isInstanceOf(CarNameInvalidException::class.java)
         }
 
@@ -31,8 +32,20 @@ class CarsTest {
 
             // when & then
             assertDoesNotThrow {
-                Cars(carNames)
+                Cars.from(carNames)
             }
         }
     }
+
+    @Test
+    fun `우승자를 찾는다`() {
+        // given
+        val cars = Cars.from(listOf("lee", "eom"))
+
+        // when
+        val result = cars.findWinners()
+
+        // then
+        assertThat(result).containsAll(listOf("lee", "eom"))
+     }
 }

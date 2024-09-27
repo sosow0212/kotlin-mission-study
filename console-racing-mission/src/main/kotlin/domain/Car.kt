@@ -14,6 +14,10 @@ class Car(
         }
     }
 
+    fun isSameMoveCount(count: Int): Boolean {
+        return this.moveCount == count
+    }
+
     companion object {
         private const val DEFAULT_MOVE_COUNT: Int = 0
         private const val MINIMUM_NUMBER_TO_MOVE_CAR: Int = 4
