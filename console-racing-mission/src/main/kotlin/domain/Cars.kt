@@ -1,4 +1,4 @@
-package com.model
+package com.domain
 
 import com.domain.exception.CarNameInvalidException
 import com.domain.service.NumberGenerator

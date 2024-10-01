@@ -1,7 +1,7 @@
 package domain
 
 import com.domain.exception.CarNameInvalidException
-import com.model.Cars
+import com.domain.Cars
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow

@@ -1,7 +1,7 @@
 package com.controller
 
 import com.domain.service.NumberGenerator
-import com.model.Cars
+import com.domain.Cars
 import com.view.InputView
 import com.view.OutputView
 
