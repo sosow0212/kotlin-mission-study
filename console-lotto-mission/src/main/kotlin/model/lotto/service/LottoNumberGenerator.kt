@@ -1,4 +1,4 @@
-package com.model.service
+package com.model.lotto.service
 
 class LottoNumberGenerator : NumberGenerator {
     override fun generate(): List<Int> {

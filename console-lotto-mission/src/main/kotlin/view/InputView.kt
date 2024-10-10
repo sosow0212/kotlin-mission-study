@@ -1,7 +1,6 @@
 package com.view
 
 class InputView {
-
     fun inputBuyingPrice(): Int {
         println("구입 금액을 입력해주세요.")
         val price = readln().toInt()

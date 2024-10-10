@@ -1,6 +1,6 @@
 package model
 
-import com.model.service.NumberGenerator
+import com.model.lotto.service.NumberGenerator
 
 class FakeNumberGenerator : NumberGenerator {
     override fun generate(): List<Int> {

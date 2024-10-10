@@ -1,6 +1,6 @@
 package com.view.response
 
-import com.model.Score
+import com.model.lotto.Score
 
 data class LottoScoresResponse(
     val scores: Map<String, Int>,

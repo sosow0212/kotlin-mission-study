@@ -1,6 +1,6 @@
 package com.view.response
 
-import com.model.Lottos
+import com.model.lotto.Lottos
 
 data class LottoStatusResponse(
     val quantity: Int,
@@ -9,10 +9,9 @@ data class LottoStatusResponse(
     companion object {
         fun from(lottos: Lottos): LottoStatusResponse {
             return LottoStatusResponse(
-                lottos.lottos.size,
-                lottos.lottos.stream()
+                quantity = lottos.lottos.size,
+                lottos = lottos.lottos
                     .map { LottoNumberResponse.from(it) }
-                    .toList()
             )
         }
     }

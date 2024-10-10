@@ -1,7 +1,8 @@
 package com.controller
 
-import com.model.Lottos
-import com.model.service.NumberGenerator
+import com.model.lotto.Lottos
+import com.model.lotto.service.NumberGenerator
+import com.model.manager.LottoManager
 import com.view.InputView
 import com.view.OutputView
 import com.view.response.LottoScoresResponse
@@ -19,7 +20,12 @@ class LottoController(
 
         val winningLottoNumbers = inputView.inputLottoNumbers()
         val winningBonusNumber = inputView.inputBonusNumber()
-        val scores = lottos.calculateResult(winningLottoNumbers, winningBonusNumber)
+        val lottoManager = LottoManager.of(winningLottoNumbers, winningBonusNumber)
+
+        val scores = lottos.calculateResult(
+            lottoManager.winningLottoNumbers.winningLottoNumbers,
+            lottoManager.winningBonusNumber
+        )
         outputView.printLottosResult(LottoScoresResponse.of(scores, buyingPrice))
     }
 }

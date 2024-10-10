@@ -1,7 +1,7 @@
 package com
 
 import com.controller.LottoController
-import com.model.service.LottoNumberGenerator
+import com.model.lotto.service.LottoNumberGenerator
 import com.view.InputView
 import com.view.OutputView
 

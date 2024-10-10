@@ -1,6 +1,6 @@
 package model
 
-import com.model.service.LottoNumberGenerator
+import com.model.lotto.service.LottoNumberGenerator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 

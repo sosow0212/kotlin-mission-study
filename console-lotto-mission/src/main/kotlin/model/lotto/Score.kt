@@ -1,4 +1,6 @@
-package com.model
+package com.model.lotto
+
+import com.model.vo.LottoNumber
 
 enum class Score(val id: String, val price: Int) {
     ZERO("꽝", 0),
@@ -10,9 +12,9 @@ enum class Score(val id: String, val price: Int) {
 
     companion object {
         fun of(
-            myNumbers: List<Int>,
-            winningNumbers: List<Int>,
-            winningBonusNumber: Int
+            myNumbers: List<LottoNumber>,
+            winningNumbers: List<LottoNumber>,
+            winningBonusNumber: LottoNumber,
         ): Score {
             val matchingCount = myNumbers.intersect(winningNumbers.toSet()).size
             val isBonusCorrect = myNumbers.contains(winningBonusNumber)

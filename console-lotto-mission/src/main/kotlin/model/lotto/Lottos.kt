@@ -1,13 +1,15 @@
-package com.model
+package com.model.lotto
 
-import com.model.service.NumberGenerator
+import com.model.exception.BuyingPriceInvalidException
+import com.model.lotto.service.NumberGenerator
+import com.model.vo.LottoNumber
 
 class Lottos private constructor(
     val lottos: List<Lotto>
 ) {
     fun calculateResult(
-        winningLottoNumber: List<Int>,
-        winningBonusNumber: Int
+        winningLottoNumber: List<LottoNumber>,
+        winningBonusNumber: LottoNumber,
     ): List<Score> {
         val scores = lottos.map { it.calculateScore(winningLottoNumber, winningBonusNumber) }
             .toList()
@@ -19,6 +21,7 @@ class Lottos private constructor(
         private const val PRICE_EACH_LOTTO = 1000
 
         fun from(price: Int, numberGenerator: NumberGenerator): Lottos {
+            validatePrice(price);
             val quantity = price / PRICE_EACH_LOTTO
 
             val lottos = List(quantity) {
@@ -26,6 +29,12 @@ class Lottos private constructor(
             }
 
             return Lottos(lottos)
+        }
+
+        private fun validatePrice(price: Int) {
+            if (price % PRICE_EACH_LOTTO != 0) {
+                throw BuyingPriceInvalidException()
+            }
         }
     }
 }
