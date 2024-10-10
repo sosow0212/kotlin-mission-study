@@ -2,7 +2,10 @@ package com.model.lotto
 
 import com.model.vo.LottoNumber
 
-enum class Score(val id: String, val price: Int) {
+enum class Score(
+    val id: String,
+    val price: Int
+) {
     ZERO("꽝", 0),
     THREE("5등", 5000),
     FOURTH("4등", 50000),

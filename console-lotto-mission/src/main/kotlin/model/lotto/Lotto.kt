@@ -6,7 +6,10 @@ import com.model.vo.LottoNumber
 class Lotto private constructor(
     val lottos: List<LottoNumber>
 ) {
-    fun calculateScore(winningNumbers: List<LottoNumber>, winningBonusNumber: LottoNumber): Score {
+    fun calculateScore(
+        winningNumbers: List<LottoNumber>,
+        winningBonusNumber: LottoNumber
+    ): Score {
         return Score.of(lottos, winningNumbers, winningBonusNumber)
     }
 

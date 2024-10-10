@@ -20,7 +20,10 @@ class Lottos private constructor(
     companion object {
         private const val PRICE_EACH_LOTTO = 1000
 
-        fun from(price: Int, numberGenerator: NumberGenerator): Lottos {
+        fun from(
+            price: Int,
+            numberGenerator: NumberGenerator
+        ): Lottos {
             validatePrice(price);
             val quantity = price / PRICE_EACH_LOTTO
 

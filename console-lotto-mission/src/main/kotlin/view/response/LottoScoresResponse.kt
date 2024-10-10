@@ -8,7 +8,10 @@ data class LottoScoresResponse(
     val buyingPrice: Double,
 ) {
     companion object {
-        fun of(lottoResults: List<Score>, buyingPrice: Int): LottoScoresResponse {
+        fun of(
+            lottoResults: List<Score>,
+            buyingPrice: Int
+        ): LottoScoresResponse {
             val scores = lottoResults.groupingBy { it.id }
                 .eachCount()
 
