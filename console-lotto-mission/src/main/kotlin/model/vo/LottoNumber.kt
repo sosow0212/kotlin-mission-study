@@ -10,7 +10,7 @@ data class LottoNumber(
         private const val END_NUMBER = 45
 
         fun from(number: Int): LottoNumber {
-            if (number !in START_NUMBER..END_NUMBER) {
+            require(number in START_NUMBER..END_NUMBER) {
                 throw LottoNumberInvalidException()
             }
 
