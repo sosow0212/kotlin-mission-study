@@ -23,7 +23,7 @@ class LottoController(
         val lottoManager = LottoManager.of(winningLottoNumbers, winningBonusNumber)
 
         val scores = lottos.calculateResult(
-            lottoManager.winningLottoNumbers.winningLottoNumbers,
+            lottoManager.getWinningLottoNumbers,
             lottoManager.winningBonusNumber
         )
         outputView.printLottosResult(LottoScoresResponse.of(scores, buyingPrice))

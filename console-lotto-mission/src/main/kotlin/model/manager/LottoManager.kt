@@ -3,9 +3,12 @@ package com.model.manager
 import com.model.vo.LottoNumber
 
 class LottoManager(
-    val winningLottoNumbers: WinningLottoNumbers,
+    private val winningLottoNumbers: WinningLottoNumbers,
     val winningBonusNumber: LottoNumber
 ) {
+    val getWinningLottoNumbers: List<LottoNumber>
+        get() = winningLottoNumbers.winningLottoNumbers
+
     companion object {
         fun of(
             winningLottoNumbers: List<Int>,

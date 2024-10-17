@@ -11,10 +11,7 @@ class Lottos private constructor(
         winningLottoNumber: List<LottoNumber>,
         winningBonusNumber: LottoNumber,
     ): List<Score> {
-        val scores = lottos.map { it.calculateScore(winningLottoNumber, winningBonusNumber) }
-            .toList()
-
-        return scores
+        return lottos.map { it.calculateScore(winningLottoNumber, winningBonusNumber) }
     }
 
     companion object {
